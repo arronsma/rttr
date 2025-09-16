@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 3.10)
+project(RTTR_Blog_Demo)
+
+# 设置C++标准
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 查找RTTR库
+find_package(rttr CONFIG REQUIRED)
+
+# 或者如果是在RTTR源码目录中构建，直接链接
+if(NOT TARGET rttr::rttr)
+    # 假设我们在RTTR源码目录中
+    add_subdirectory(src)
+endif()
+
+# 创建可执行文件
+add_executable(blog_demo_chapter3 blog_demo_chapter3.cpp)
+
+# 链接RTTR库
+target_link_libraries(blog_demo_chapter3 PRIVATE rttr::rttr)
+
+# 设置输出目录
+set_target_properties(blog_demo_chapter3 PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+)
+
+# 如果需要调试信息
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    target_compile_definitions(blog_demo_chapter3 PRIVATE DEBUG)
+endif()
