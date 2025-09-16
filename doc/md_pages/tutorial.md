@@ -6,6 +6,9 @@ It is separated in two parts, using the @ref rttr::type "type" class and registe
 For the inpatient:
 [5 Minute Tutorial](@ref five_minute_tutorial_page)
 
+**📚 Comprehensive Learning Series:**
+For a complete, step-by-step learning experience, check out our [RTTR Learning Series](../learning_series/README.md) - a comprehensive guide from beginner to expert level with practical examples, exercises, and real-world applications.
+
 Working with rttr::type
 -----------------------
 -# [Retrieve rttr::type objects](@ref rttr_type_get_page)
